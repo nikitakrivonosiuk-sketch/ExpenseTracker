@@ -63,9 +63,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Category.cs" />
     <Compile Include="Expense.cs" />
-    <Compile Include="ExpenseManager.cs" />
+    <Compile Include="ExpenseRepository.cs" />
+    <Compile Include="IRepository.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

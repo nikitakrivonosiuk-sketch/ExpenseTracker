@@ -6,47 +6,66 @@
         xmlns:local="clr-namespace:ExpenseTracker"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="400">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-            <TextBlock x:Name="TotalSpentText" 
-           Text="0 $" 
-           FontSize="32" 
-           FontWeight="Bold" 
-           HorizontalAlignment="Center" 
-           VerticalAlignment="Center" 
-           Margin="0,0,0,20"/>
-            <TextBox x:Name="AmountInput" 
-                 Height="30" 
-                 Margin="0,0,0,10"
-                 TextChanged="TextBox_TextChanged"/>
+        <StackPanel Grid.Column="0" 
+                    Margin="0,0,10,0">
             
-            <ComboBox x:Name="categoryComboBox"
-                 HorizontalAlignment="Center"
-                 VerticalAlignment="Center"
-                 Margin="0, 0, 0, 1"
-                 Text="Категорія"
-                 Width="100"/>
+            <TextBlock Text="Сума:" 
+                       Margin="0,0,0,5"/>
+            
+            <TextBox x:Name="AmountInput" 
+                     TextChanged="TextBox_TextChanged" 
+                     Margin="0,0,0,10"/>
 
-            <Button x:Name="AddButton"
-                    Content="Додати витрату"
-                    FontWeight="Bold"
-                    Width="100"
-                    Height="30"
-                    Click="Button_Click"
-                    HorizontalAlignment="Center"
-                    IsEnabled="False"/>
+            <TextBlock Text="Категорія:" 
+                       Margin="0,0,0,5"/>
+            
+            <ComboBox x:Name="categoryComboBox" 
+                      Margin="0,0,0,10"/>
+
+            <Button x:Name="AddButton" 
+                    Content="Додати" 
+                    Click="Button_Click" 
+                    IsEnabled="False" 
+                    Margin="0,0,0,10" 
+                    Height="30"/>
+            
+            <Button x:Name="EditButton" 
+                    Content="Редагувати вибране" 
+                    Click="Button_Edit_Click" 
+                    Margin="0,0,0,10" 
+                    Height="30"/>
+            
+            <Button x:Name="DeleteButton" 
+                    Content="Видалити вибране" 
+                    Click="Button_Delete_Click" 
+                    Margin="0,0,0,10" 
+                    Height="30"/>
+
+            <Button Content="Очистити всю базу" 
+                    Click="Button_Clear" 
+                    Margin="0,0,0,10" 
+                    Height="30"/>
+
+            <TextBlock Text="Загалом витрачено:" 
+                       Margin="0,20,0,5" 
+                       FontWeight="Bold"/>
+            
+            <TextBlock x:Name="TotalSpentText" 
+                       Text="0 $" FontSize="16" 
+                       Foreground="Blue" 
+                       FontWeight="Bold"/>
         </StackPanel>
 
-        <Button x:Name="ClearButton"
-        Content="Скидання витрат"
-        FontWeight="Medium"
-        Width="110"
-        Height="30"
-        Click="Button_Clear"
-        HorizontalAlignment="Center"
-        VerticalAlignment="Bottom"
-        Margin="0,0,0,20"/>
-        
+        <DataGrid x:Name="ExpensesList" 
+                  Grid.Column="1" 
+                  AutoGenerateColumns="True" 
+                  IsReadOnly="True" 
+                  SelectionMode="Single"/>
     </Grid>
 </Window>
