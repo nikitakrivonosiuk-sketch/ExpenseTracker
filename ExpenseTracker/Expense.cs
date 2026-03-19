@@ -8,15 +8,23 @@ namespace ExpenseTracker
 {
     internal class Expense
     {
-        public decimal _amount {  get; private set; }
-        public Category _category { get; private set; }
-        public DateTime _date { get; private set; }
+        public int Id { get; set; }
+        public decimal Amount {  get;  set; }
+        public Category Category { get; set; }
+        public DateTime Date { get; set; }
 
         public Expense(decimal value, Category category, DateTime date)
         {
-            _amount = value;
-            _category = category;
-            _date = date;
+            Amount = value;
+            Category = category;
+            Date = date;
         }
+    }
+    enum Category
+    {
+        Food,
+        Transport,
+        Entertainment,
+        Utilities
     }
 }
