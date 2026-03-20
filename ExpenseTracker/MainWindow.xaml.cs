@@ -3,6 +3,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Linq;
 
+
 namespace ExpenseTracker
 {
     public partial class MainWindow : Window
@@ -37,6 +38,8 @@ namespace ExpenseTracker
                     _editedExpense.Category = selectedCategory;
 
                     ExpensesList.Items.Refresh();
+
+                    _repository.SaveData();
 
                     _editedExpense = null;
                     AddButton.Content = "Додати витрату";
@@ -89,6 +92,7 @@ namespace ExpenseTracker
             }
             else
                 MessageBox.Show("Не вибрано жодного об'єкту з списку.");
+
         }
     }
 }
