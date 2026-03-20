@@ -13,6 +13,11 @@ namespace ExpenseTracker
         public Category Category { get; set; }
         public DateTime Date { get; set; }
 
+        public Expense()
+        {
+            
+        }
+
         public Expense(decimal value, Category category, DateTime date)
         {
             Amount = value;
