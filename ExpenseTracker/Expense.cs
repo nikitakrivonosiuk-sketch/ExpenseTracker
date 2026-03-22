@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ExpenseTracker
 {
-    internal class Expense
+    public class Expense
     {
         public int Id { get; set; }
         public decimal Amount {  get;  set; }
@@ -24,7 +24,7 @@ namespace ExpenseTracker
             Date = date;
         }
     }
-    enum Category
+    public enum Category
     {
         Food,
         Transport,
