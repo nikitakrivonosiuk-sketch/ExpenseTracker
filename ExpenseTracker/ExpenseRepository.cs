@@ -7,7 +7,7 @@ using System.Text.Json;
 
 namespace ExpenseTracker
 {
-    internal class ExpenseRepository : IRepository<Expense>
+    public class ExpenseRepository : IRepository<Expense>
     {
         public ObservableCollection<Expense> Expenses { get; } = new ObservableCollection<Expense>();
         private int _nextId = 1;
