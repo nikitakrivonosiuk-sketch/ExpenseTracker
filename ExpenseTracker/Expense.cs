@@ -17,7 +17,6 @@ namespace ExpenseTracker
         {
             
         }
-
         public Expense(decimal value, Category category, DateTime date)
         {
             Amount = value;
